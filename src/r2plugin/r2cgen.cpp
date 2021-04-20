@@ -99,7 +99,7 @@ RCodeMeta* R2CGenerator::provideAnnotations(const rapidjson::Document &root) con
 				annotation.offset.offset = lastAddr.value();
 				annotation.start = bpos;
 				annotation.end = epos;
-				r_codemeta_add_annotation(code, &annotation);
+				r_codemeta_add_item(code, &annotation);
 			}
 
 			auto higlight = highlightTypeForToken(token["kind"].GetString());
@@ -109,7 +109,7 @@ RCodeMeta* R2CGenerator::provideAnnotations(const rapidjson::Document &root) con
 				annotation.syntax_highlight.type = higlight.value();
 				annotation.start = bpos;
 				annotation.end = epos;
-				r_codemeta_add_annotation(code, &annotation);
+				r_codemeta_add_item(code, &annotation);
 			}
 		}
 		else {
